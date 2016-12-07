@@ -1,0 +1,289 @@
+/*
+* @Author: yafee
+* @Date:   2016-12-06 19:33:22
+* @Last Modified by:   yafee
+* @Last Modified time: 2016-12-07 16:56:44
+*/
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Microsoft Yahei', 'Luxi Sans', 'DejaVu Sans', Tahoma, 'Hiragino Sans GB', STHeiti, SimSun;
+  color: #fff;
+  background: #0b9fff;
+}
+
+@font-face {
+  font-family: 'fzlth';
+  url: ('../lib/fzlth.TTF');
+}
+.font12{
+	font-size: 1.2rem;
+}
+.font14{
+	font-size: 1.4rem;
+}
+.stuff-block1,
+.stuff-block2,
+.stuff-block3,
+.stuff-block4 {
+  width: 0;
+  height: 0;
+}
+.stuff-block1,
+.stuff-block4{
+	border-right-style: solid;
+  border-right-color: transparent;
+}
+.stuff-block2,
+.stuff-block3{
+	border-left-style: solid;
+  border-left-color: transparent;
+}
+.stuff-block1 {
+  border-bottom: 6.1rem solid #fff;
+}
+.stuff-block2 {
+  border-top: 6.1rem solid #fff;
+}
+.stuff-block3 {
+  border-bottom: 8.5rem solid #fff;
+}
+.stuff-block4 {
+  border-top: 8.5rem solid #fff;
+}
+.read-time,
+.book-shelf{
+	background: #fff;
+}
+.read-title {
+  background-image: url(../imgs/bg1.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding-top: 4.6rem;
+  padding-bottom: 4.1rem;
+}
+
+.read-title-text {
+  display: block;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'fzlth';
+}
+
+.read-time-range {
+  /*font-size: 1.4rem;*/
+}
+/*上周读书，书评，下载公有背景*/
+/*.book-comment,
+.read-lastweek{
+	background: #0b9fff;
+}*/
+.read-lastweek {
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.user-info {
+  width: 6rem;
+  margin-left: 4.5rem;
+  padding-top: 2rem;
+}
+
+.user-pic {
+  width: 100%;
+  height: 6rem;
+  margin-bottom: .5rem;
+}
+
+.user-nickname {
+  /*font-size: 1.4rem;*/
+}
+
+.read-lastweek-text {
+  position: absolute;
+  left: 45%;
+  top: 0;
+}
+
+.read-lastweek-text span {
+  display: block;
+  margin-bottom: .8rem;
+}
+
+.read-lastweek-text button {
+  background: #1fb9f7;
+  border-radius: .3rem;
+  border: none;
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+.read-lastweek-book {
+  position: absolute;
+  width: 8rem;
+  right: 5%;
+  bottom: -1rem;
+}
+/*读书时间，我的书评，我的书架公用*/
+.book-shelf,
+.book-comment,
+.read-time {
+  position: relative;
+}
+
+/*读书时间，书评标题，我的书架文字公用*/
+.book-comment-text,
+/*.book-shelf-text,*/
+.read-time-text {
+  position: absolute;
+  left: 3rem;
+  top: -1.5rem;
+}
+.book-shelf-text span,
+.book-comment-text span,
+.read-time-text span {
+  display: block;
+  font-size: 2rem;
+}
+/*读书时间，我的书架*/
+.book-shelf-text,
+.read-time-text{
+	color: #303439;
+}
+/**/
+.read-time-level {
+  width: 7.5rem;
+  height: 4rem;
+  position: absolute;
+  top: 1rem;
+  right: 2.5rem;
+}
+
+.read-time-all {
+  color: #7f8c98;
+  padding-top: 3rem;
+}
+
+.read-time-chart {
+  width: 100%;
+  height: 15rem;
+}
+
+.book-comment{
+	padding: 0 3rem;
+}
+
+.book-comment-text{
+	color: #fff;
+}
+
+.book-comment-summary{
+	display: block;
+	padding: 3rem 0 2rem;
+}
+
+.book-comment-main{
+	width: 100%;
+	border:.4rem double #fff;
+	border-radius: .6rem;
+	padding: 1.2rem 1.5rem;
+}
+.book-comment-obj{
+	margin-top: 1rem;
+}
+.book-comment-pic{
+	width: 6rem;
+	display: inline-block;
+	margin-right: 1.5rem;
+}
+.book-comment-pic img{
+	width: 100%;
+}
+.book-comment-name-author{
+	display: inline-block;
+	-webkit-transform: translateY(1.5rem);
+	-ms-transform: translateY(1.5rem);
+	-o-transform: translateY(1.5rem);
+	transform: translateY(1.5rem);
+}
+.book-cooment-name{
+	display: block;
+	font-size: 1.9rem;
+	font-weight: bold;
+	-webkit-transform: translateX(-.9rem);
+	-ms-transform: translateX(-.9rem);
+	-o-transform: translateX(-.9rem);
+	transform: translateX(-.9rem);
+}
+.book-comment-author{
+	font-size: 1.5rem;
+}
+.book-comment-switch{
+	margin-top: 1.5rem;
+}
+.book-comment-pre,
+.book-comment-next{
+	color: #0b9fff;
+	border:none;
+	width: 5.5rem;
+	border-radius: .3rem;
+	background: #fff;
+}
+.book-shelf-text{
+	position: absolute;
+	right: 5rem;
+	top: -2rem;
+}
+.book-shelf-summary{
+	padding-top: 3rem;
+	color: #242424;
+	width: 100%;
+}
+.book-shelf-summary>div{
+	padding: 0;
+}
+.book-shelf-preview img,
+.book-shelf-preview{
+	width: 100%;
+}
+.book-shelf-preview{
+	margin-left: 0;
+	margin-top: 2rem;
+	padding: 0 2rem;
+}
+.book-shelf-enter{
+	background: #0da0ff;
+	border-radius: .3rem;
+	border:none;
+	margin: 2.2rem 0 0 3.2rem;
+	padding: .5rem 1rem;
+}
+.book-shelf-enter,
+.download-app-btn{
+	-webkit-box-shadow: 1.5px 2.598px 6px 0 rgba(11,159,255,.2);
+	box-shadow: 1.5px 2.598px 6px 0 rgba(11,159,255,.2);
+}
+.download-app{
+	background-image: url('../imgs/bg2.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.download-app span{
+	font-size: 1.5rem;
+	display: inline-block;
+	margin-top: 1.3rem;
+}
+.download-app-btn{
+	display: inline-block;
+	border:none;
+	border-radius: .6rem;
+	margin:3.4rem 0;
+	padding: .4rem 1rem;
+	background-color: #fff;
+	color: #0b9fff;
+	font-size: 1.7rem;
+}
+

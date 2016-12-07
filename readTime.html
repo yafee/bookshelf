@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>用户书架</title>
+  <!-- Bootstrap -->
+  <link href="lib/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/readTime.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <div class="read-title text-center">
+    <span class="read-title-text font12">我的读书周报</span>
+    <span class="read-time-range font14">2016.11.21-2016.12.21/兆米出品</span>
+  </div>
+  <div class="read-lastweek">
+    <div class="user-info text-center">
+      <img src="imgs/touxiang.png" class="user-pic">
+      <br>
+      <span class="user-nickname font14">用户昵称</span>
+    </div>
+    <div class="read-lastweek-text">
+      <span>BOOK</span>
+      <span>上周读书</span>
+      <button class="font12">明朝那些事</button>
+      <br>
+      <button class="font12">西游记</button>
+    </div>
+    <div class="read-lastweek-book">
+      <img src="imgs/shangzhoudushu.png" class="read-lastweek-book">
+    </div>
+  </div>
+  <div class="stuff-block1"></div>
+  <div class="read-time">
+    <span class="read-time-text">
+      DURATION
+      <span>读书时间</span>
+    </span>
+    <img src="imgs/zhongdushuchong.png" class="read-time-level">
+    <p class="text-center read-time-all font14">8小时49分钟</p>
+    <div class="read-time-chart"></div>
+  </div>
+  <div class="stuff-block2"></div>
+  <div class="book-comment">
+    <span class="book-comment-text font12">
+      REVIEW
+      <span>我的书评</span>
+    </span>
+    <span class="book-comment-summary font12">本周点评5条，收到42个用户认可</span>
+    <div class="book-comment-main">
+      <span class="book-comment-content font12">
+        这本书真的很不错，这本书值得一看，这本书很好。这本书真的很不错，这本书值得一看，这本书很好。这本书真的很不错，这本书值得一看，这本书很好。
+      </span>
+      <div class="book-comment-obj">
+        <div class="book-comment-pic">
+          <img src="imgs/santi.png">
+        </div>
+        <div class="book-comment-name-author">
+          <span class="book-cooment-name">《三体》</span>
+          <span class="book-comment-author">刘慈欣</span>
+        </div>
+      </div>
+    </div>
+    <div class="row book-comment-switch">
+      <div class="col-sm-6 col-xs-6 text-right">
+        <button class="book-comment-pre font12">上一页</button>
+      </div>
+      <div class="col-sm-6 col-xs-6">
+        <button class="book-comment-next font12">上一页</button>
+      </div>
+    </div>
+  </div>
+  <div class="stuff-block3"></div>
+  <div class="book-shelf">
+    <span class="book-shelf-text">
+      SHELF
+      <span>我的书架</span>
+    </span>
+    <div class="row book-shelf-summary ">
+      <div class="col-xs-2 col-sm-2"></div>
+      <div class="col-xs-5 col-sm-5 text-right">新增藏书：1本</div>
+      <div class="col-xs-5 col-sm-5 text-center">藏书总数：10本</div>
+    </div>
+    <div class="row text-center book-shelf-preview">
+      <div class="col-xs-4 col-sm-4"><img src="imgs/shujia1.png"></div>
+      <div class="col-xs-4 col-sm-4"><img src="imgs/shujia1.png"></div>
+      <div class="col-xs-4 col-sm-4"><img src="imgs/shujia1.png"></div>
+    </div>
+    <button class="book-shelf-enter font12">进入书架</button>
+  </div>
+  <div class="stuff-block4"></div>
+  <div class="download-app text-center">
+    <img src="imgs/logo.png" width="56" height="56"><br>
+    <span>兆米出品</span><br>
+    <button class="download-app-btn">下载客户端</button>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="lib/jquery-1.11.3.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/echarts.min.js"></script>
+  <script>
+  // 处理背景
+  var fullwidth = $('body').width();
+  $('.stuff-block1,.stuff-block4').css('borderRightWidth',fullwidth+'px');
+  $('.stuff-block2,.stuff-block3').css('borderLeftWidth',fullwidth+'px');
+  var myChart = echarts.init($('.read-time-chart')[0]);
+  // 指定图表的配置项和数据
+  var option = {
+    color: ['#ADDECB'],
+    grid: {
+      top: '2%',
+      bottom: '15%'
+    },
+    xAxis: {
+      axisLine: {
+        show: false
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        textStyle: {
+          color: '#6a6a6a'
+        }
+      },
+      data: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"]
+    },
+    yAxis: {
+      axisLine: false,
+      splitLine: false
+    },
+    series: [{
+      name: 'time',
+      type: 'bar',
+      data: [5, 20, 36, 10, 10, 20, 40]
+    }]
+  };
+  // 使用刚指定的配置项和数据显示图表。
+  myChart.setOption(option);
+  </script>
+</body>
+
+</html>
